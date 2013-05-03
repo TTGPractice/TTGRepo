@@ -22,44 +22,39 @@ public class ComputationServlet extends HttpServlet {
 		
 		
 		int n1,n2;
-		String operation;
+		String op;
 		
 		PrintWriter out=response.getWriter();
 		
 		n1=Integer.parseInt(request.getParameter("num1"));
 		n2=Integer.parseInt(request.getParameter("num2"));
-		operation=request.getParameter("operation");
+		op=request.getParameter("op");
 		
 		out.println("First Number : " + n1);
 		
 		out.println("Second Number : " + n2);
 		
-		out.println("operation : " + operation);
+		out.println("operation : " + op);
 		
-		if(operation.equals("addition"))
+		if(op.equals("addition"))
 		{
 			int sum=n1+n2;
 			out.println("Result : "+sum);	
 		}
 		else
-			if(operation.equals("subtract"))
+			if(op.equals("subtract"))
 			{
 				int diff= Math.abs(n1-n2);
 				out.println("Result : "+diff);
 			}
 			else
-				if(operation.equals("multiply"))
+				if(op.equals("multiply"))
 				{
 					int mul= n1*n2;
 					out.println("Result : "+mul);
 				}
 				else
-					out.println("wrong operation selected");
-		
-		
-		
-		
-		
+					out.println("wrong operation selected");		
 		
 	}
 
